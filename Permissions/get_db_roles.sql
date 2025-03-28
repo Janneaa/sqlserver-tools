@@ -3,7 +3,7 @@ SELECT DP1.name AS DatabaseRoleName,
 	(CASE
 	    WHEN sp.is_disabled = 1 THEN 'Disabled'
 		WHEN sp.is_disabled = 0 THEN 'Enabled'
-		ELSE NULL
+		ELSE ''
 	END) AS 'LoginStatus',
     ISNULL(DP2.name, '-') AS PrincipalName,
     DP2.type_desc AS PrincipalType
