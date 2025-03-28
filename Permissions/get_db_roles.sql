@@ -5,7 +5,7 @@ SELECT DP1.name AS DatabaseRoleName,
 		WHEN sp.is_disabled = 0 THEN 'Enabled'
 		ELSE ''
 	END) AS 'LoginStatus',
-    ISNULL(DP2.name, '-') AS PrincipalName,
+    ISNULL(DP2.name, '') AS PrincipalName,
     DP2.type_desc AS PrincipalType
 FROM sys.database_role_members AS DRM
 RIGHT JOIN sys.database_principals AS DP1
